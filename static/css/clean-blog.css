@@ -62,6 +62,12 @@ hr.small {
 }
 .navbar-custom .navbar-brand {
   font-weight: 800;
+  padding: 0;
+}
+.navbar-custom .navbar-brand img {
+  height: 100%;
+  width: auto;
+  padding: 8px;
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
@@ -76,7 +82,6 @@ hr.small {
   }
   .navbar-custom .navbar-brand {
     color: white;
-    padding: 20px;
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
