@@ -130,7 +130,6 @@
                     {% endfor %}
 
                     {% if DISPLAY_PAGES_ON_MENU %}
-                        {# FIXME: Simplify to 'for p in pages' when we are ready to drop support for Pelican < 3.7 #}
                         {% for p in pages if not p.hide_in_menu %}
                             <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
                         {% endfor %}
