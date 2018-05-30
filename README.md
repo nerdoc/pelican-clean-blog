@@ -28,6 +28,16 @@ HEADER_COLOR = 'black'
 
 you can use any valid css color.
 
+### Frontpage attribute
+
+You can use the `Frontpage` attribute in a rst/md/html page. If this attribute
+is True, the page is shown in a list on the front page. You can use `PAGE_ORDER`
+to set the ordering attribute, like `weight`.
+
+### Hide_in_menu attribute
+ Even if `DISPLAY_PAGES_ON_MENU` is set to True, you can exclude single pages
+ from showing up in the menu, by setting their `Hide_in_menu` attribute to True.
+
 ### Social URLs
 
 Github, Twitter and Facebook URLs set these properties:

@@ -112,7 +112,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+
+                <a class="navbar-brand" href="{{ SITEURL }}/">
+                  {% if SITE_LOGO %}
+                  <img src="{{ SITEURL }}/{{ SITE_LOGO }}">
+                  {% else %}
+                  {{ SITENAME }}
+                  {% endif %}
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -123,8 +130,7 @@
                     {% endfor %}
 
                     {% if DISPLAY_PAGES_ON_MENU %}
-                        {# FIXME: Simplify to 'for p in pages' when we are ready to drop support for Pelican < 3.7 #}
-                        {% for p in PAGES or pages %}
+                        {% for p in pages if not p.hide_in_menu %}
                             <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
                         {% endfor %}
                     {% else %}
@@ -192,6 +198,10 @@
     {% if not DISABLE_CUSTOM_THEME_JAVASCRIPT %}
         <!-- Custom Theme JavaScript -->
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/clean-blog.min.js"></script>
+    {% endif %}
+
+    {% if CUSTOM_JS %}
+        <script src="{{ SITEURL }}/{{ CUSTOM_JS }}"></script>
     {% endif %}
 
     {% include 'analytics.html' %}
