@@ -37,7 +37,7 @@
             <h2 class="page-title">{{ page.title }}</h2>
             <!-- </a> -->
             {{ page.content }}
-            <hr>
+            {% if not loop.last %}<hr>{% endif %}
         </div>
     {% endfor %}
 
