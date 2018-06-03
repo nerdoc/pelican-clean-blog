@@ -31,8 +31,7 @@
 {% endblock header %}
 
 {% block content %}
-    {% for page in pages %}
-      {% if page.frontpage %}
+    {% for page in pages if page.frontpage %}
         <div class="page-listing">
 <!--            <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark" title="Permalink to {{ page.title|striptags }}">-->
             <h2 class="page-title">{{ page.title }}</h2>
@@ -40,7 +39,6 @@
             {{ page.content }}
             <hr>
         </div>
-      {% endif %}
     {% endfor %}
 
     {% include "pagination.html" %}
