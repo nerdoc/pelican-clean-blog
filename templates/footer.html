@@ -2,6 +2,7 @@
     {% if LINKS %}
     {% for title, url in LINKS %}
       <a href='{{ url }}'>{{ title }}</a>
+      {% if not loop.last %} | {% endif %}
     {% endfor %}
     <br/>
     {% endif %}
